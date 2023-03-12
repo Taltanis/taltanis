@@ -1,0 +1,117 @@
+{% load static sekizai_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="author" content="Evennia Contributors" />
+    <meta name="generator" content="Evennia" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/x-icon" href="/static/website/images/evennia_logo.png" />
+
+    <!-- Bootstrap CSS -->
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"-->
+    <link rel="stylesheet" type="text/css" href="{% static "website/css/bootstrap.min.css" %}">
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static "website/css/app.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "website/css/my.css" %}">
+
+    {% comment %}
+    Allows for loading custom styles without overriding the base site styles
+    {% endcomment %}
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static "website/css/custom.css" %}">
+
+      <link href="{% static 'fonts/CormorantInfant-Regular.ttf' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'fonts/OpenSans-Regular.ttf' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'fonts/RobotoSlab-Regular.ttf' %}" rel="stylesheet" type="text/css">
+      <!--link href="{% static 'fonts/roboto-slab-v13-latin-regular.ttf' %}" rel="stylesheet" type="text/css"-->
+
+    {% block header_ext %}
+    {% endblock %}
+
+    <title>{{game_name}} - {% if flatpage %}{{flatpage.title}}{% else %}{% block titleblock %}{{page_title}}{% endblock %}{% endif %}</title>
+  </head>
+
+  <body style="background-image: url('../static/website/images/background.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-position: center center;">
+
+  <!--body-->
+  
+    {% block body %}
+
+    <div id="top"><a href="#main-content" class="sr-only sr-only-focusable">Skip to main content.</a></div>
+    {% include "website/_menu.html" %}
+    <!--
+    <div class="page-header clear-filter" filter-color="orange">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('../static/website/images/background.jpg');">
+            <p>blablabla</p></div>
+    </div>
+
+    <div class="view" style="background-image: url('../static/website/images/background.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    -->
+    <div class="container main-content mt-4" id="main-copy">
+<!--
+    <style>
+.parallax {
+  /* The image used */
+  background-image: url("../static/website/images/background.jpg");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+-->
+<!-- Container element -->
+<!--
+      <div class="parallax"></div>
+-->
+      <div class="row">
+
+        <div class="col-9">
+          {% include 'website/messages.html' %}
+
+          {% block content %}
+          {% endblock %}
+
+          {% include 'website/pagination.html' %}
+        </div>
+        <div class="col-3">
+          {% block sidebar %}
+		  
+          {% endblock %}
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+    {% block footer %}
+        <div class="container">
+            <span class="text-white">Powered by <a class="text-white font-weight-bold" href="http://evennia.com">Evennia.</a></span>
+        </div>
+    {% endblock %}
+    </footer>
+
+    {% endblock %}
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+	<!--link rel="stylesheet" type="text/css" href="{% static "website/css/bootstrap.min.css" %}"-->
+	<script src="{% static "website/javascript/jquery-3.2.1.slim.min.js" %}"></script>
+	<script src="{% static "website/javascript/popper.min.js" %}"></script>
+	<script src="{% static "website/javascript/bootstrap.min.js" %}"></script>
+	<!--
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	-->
+  </body>
+</html>

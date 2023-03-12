@@ -1,0 +1,214 @@
+{% comment %}
+Allow to customize the menu that appears at the top of every Evennia
+webpage. Copy this file to your game dir's web/template_overrides/website
+folder and edit it to add/remove links to the menu.
+{% endcomment %}
+{% load static %}
+<span class="d-block p-2 bg-dark text-right text-white">
+<!--nav class="navbar navbar-dark font-weight-bold navbar-expand-md">
+<ul class="navbar-nav"-->
+        {% if account %}
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="user_options"
+               aria-expanded="false">
+                {% if puppet %}
+                Willkommen, {{ puppet }}! <span class="text-muted">(Konto: {{ account.username }})</span> <span
+                    class="caret"></span>
+                {% else %}
+                Angemeldet als {{ account.username }} <span class="caret"></span>
+                {% endif %}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="user_options">
+                {% if user.is_staff %}
+                <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+                <div class="dropdown-divider"></div>
+                {% endif %}
+                <a class="dropdown-item" href="{% url 'character-create' %}">Create Character</a>
+                <a class="dropdown-item" href="{% url 'character-manage' %}">Manage Characters</a>
+                <div class="dropdown-divider"></div>
+                {% for character in account.characters|slice:"10" %}
+                <a class="dropdown-item" href="{{ character.web_get_puppet_url }}?next={{ request.path }}">{{ character.name }}</a>
+                {% empty %}
+                <a class="dropdown-item" href="#">No characters found!</a>
+                {% endfor %}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Passwort ändern</a>
+                <a class="dropdown-item" href="{% url 'logout' %}">Abmelden</a>
+            </div>
+        </div>
+            <!--span><a href="{% url 'logout' %}">Abmelden</a></span-->
+
+        {% else %}
+<span>
+            <a href="{% url 'login' %}?next={{ request.path }}">Anmelden</a>
+</span><span>
+            <a href="{% url 'register' %}">Registrieren</a>
+</span>
+        {% endif %}
+
+<!--/ul>
+</nav-->
+</span>
+
+<!--header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar"-->
+
+<!--nav class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar"-->
+<nav class="navbar navbar-dark sticky-top font-weight-bold navbar-expand-md">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#menu-content"
+            aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="/">
+        <div class="media">
+            <img class="d-flex navbar-brand-logo mx-3" src="{% static "website/images/evennia_logo.png" %}" alt="{{game_name}} logo" />
+            <div class="media-body">
+                {{ game_name }}<br/>
+                <small>{{game_slogan}}</small>
+            </div>
+        </div>
+    </a>
+
+    <div class="collapse navbar-collapse" id="menu-content">
+        <ul class="navbar-nav mx-auto">
+            {% block navbar_left %}
+            <li>
+                <a class="nav-link" href="{% url 'index' %}">Startseite</a>
+            </li>
+    <!--li>
+        <a class="nav-link" href="{% url 'Story' %}">Story</a>
+    </li-->
+    <!-- evennia documentation -->
+    <!--
+    <li>
+      <a class="nav-link" href="https://github.com/evennia/evennia/wiki/Evennia-Introduction/">About</a>
+    </li>
+    <li><a class="nav-link" href="https://github.com/evennia/evennia/wiki">Documentation</a></li>
+    -->
+    <!-- end evennia documentation -->
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Das Spiel</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'New' %}">Alles für den Spielstart</a>
+            <a class="dropdown-item" href="{% url 'Prologue' %}">An die Spielerinnen und Spieler</a>
+            <!--a class="dropdown-item" href="#">Kompendium</a-->
+            <a class="dropdown-item" href="#">Discord</a>
+            <a class="dropdown-item" href="{% url 'FAQ' %}">FAQ</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'Participate' %}">Mitmachen?</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Die Welt</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item disabled" href="#">Regionen</a>
+            <a class="dropdown-item disabled" href="#">Völker</a>
+            <a class="dropdown-item disabled" href="#">Geschichte</a>
+            <a class="dropdown-item disabled" href="#">Gilden</a>
+            <a class="dropdown-item disabled" href="#">Zünfte</a>
+            <a class="dropdown-item disabled" href="#">Seefahrt</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Der Kodex</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'TermsOfUse' %}">Spielervereinbarung</a>
+            <a class="dropdown-item" href="{% url 'Descriptor' %}">Beschreibervereinbarung</a>
+            <a class="dropdown-item" href="{% url 'Developer' %}">Entwicklervereinbarung</a>
+            <a class="dropdown-item" href="{% url 'Admins' %}">Administratorenvereinbarung</a>
+            <a class="dropdown-item" href="{% url 'CodesOfConduct' %}">Verhaltenskodex</a>
+            <a class="dropdown-item" href="{% url 'Rights' %}">Magna Carta der Spielerrechte</a>
+        </div>
+    </li>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Das Kompendium</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/wiki">Enzyklopädie</a><!--Wiki-->
+            <a class="dropdown-item" href="/boards#">Gazette</a><!--Zeitung-->
+            <a class="dropdown-item" href="{% url 'help' %}">Almanach</a><!--Hilfe-->
+            <a class="dropdown-item" href="#">Journale</a><!--Blogs-->
+			<div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Letzte Änderungen</a>
+        </div>
+    </li>
+    <!--li>
+         <a class="nav-link" href="/wiki">Der Almanach</a>
+
+    </li>
+    <li>
+         <a class="nav-link" href="{% url 'index' %}">Blog</a>
+
+    </li-->
+    <!-- game views -->
+    <!--
+    <li><a class="nav-link" href="{% url 'characters' %}">Characters</a></li>
+    <li><a class="nav-link" href="{% url 'channels' %}">Channels</a></li>
+    <li><a class="nav-link" href="{% url 'help' %}">Help</a></li>
+    -->
+    <!-- end game views -->
+
+    {% if webclient_enabled %}
+    <!--li><a class="nav-link" href="{% url 'webclient:index' %}" target="_blank">Jetzt spielen!</a></li-->
+    {% endif %}
+
+    {% endblock %}
+    </ul>
+    <ul class="nav navbar-nav ml-auto w-120 justify-content-end">
+        {% block navbar_right %}
+    {% if webclient_enabled %}
+    <li><a class="nav-link" href="{% url 'webclient:index' %}" target="_blank">Jetzt spielen!</a></li>
+    {% endif %}
+        {% endblock %}
+</ul>
+        {% block navbar_user %}
+        {% if false %}
+        {% if account %}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="user_optionsBLA"
+               aria-expanded="false">
+                <!--
+                {% if puppet %}
+                Welcome, {{ puppet }}! <span class="text-muted">({{ account.username }})</span> <span
+                    class="caret"></span>
+                {% else %}
+                Logged in as {{ account.username }} <span class="caret"></span>
+                {% endif %}
+                -->
+                {{ account.username }} <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="user_options">
+                {% if user.is_staff %}
+                <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+                <div class="dropdown-divider"></div>
+                {% endif %}
+                <a class="dropdown-item" href="{% url 'character-create' %}">Create Character</a>
+                <a class="dropdown-item" href="{% url 'character-manage' %}">Manage Characters</a>
+                <div class="dropdown-divider"></div>
+                {% for character in account.characters|slice:"10" %}
+                <a class="dropdown-item" href="{{ character.web_get_puppet_url }}?next={{ request.path }}">{{ character.name }}</a>
+                {% empty %}
+                <a class="dropdown-item" href="#">No characters found!</a>
+                {% endfor %}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Passwort ändern</a>
+                <a class="dropdown-item" href="{% url 'logout' %}">Abmelden</a>
+            </div>
+        </li>
+        <!--li>
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+        </li-->
+        {% else %}
+        <li>
+            <a class="nav-link" href="{% url 'login' %}?next={{ request.path }}">Anmelden</a>
+        </li>
+        <li>
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endblock %}
+    <!--/ul-->
+    </div>
+</nav>

@@ -48,6 +48,10 @@ USE_TZ = True
 # http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
 LANGUAGE_CODE = "de-DE"
 
+# Ändert die verwendete Sprache:
+USE_I18N = True
+LANGUAGE_CODE = 'de'
+
 # The time factor dictates if the game world runs faster (timefactor>1)
 # or slower (timefactor<1) than the real world.
 TIME_FACTOR = 13.0
@@ -67,6 +71,15 @@ TIME_FACTOR = 13.0
 #  3 - like mode 2, except multiple sessions can puppet one character, each
 #      session getting the same data.
 MULTISESSION_MODE = 2
+
+# Whether an account should auto-puppet the last puppeted puppet when logging in. This
+# will only work if the session/puppet combination can be determined (usually
+# MULTISESSION_MODE 0 or 1), otherwise, the player will end up OOC. Use
+# MULTISESSION_MODE=0, AUTO_CREATE_CHARACTER_WITH_ACCOUNT=True and this value to
+# mimic a legacy mud with minimal difference between Account and Character. Disable
+# this and AUTO_PUPPET to get a chargen/character select screen on login.
+AUTO_PUPPET_ON_LOGIN = False # Default: True
+
 
 ######################################################################
 # Zusätzliche Komponenten für Webseite und Spiel
