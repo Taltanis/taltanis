@@ -32,5 +32,20 @@ class Character(ObjectParent, DefaultCharacter):
     at_post_puppet - Echoes "AccountName has entered the game" to the room.
 
     """
-
+    def at_object_creation(self):       
+        self.db.strength = random.randint(3, 18)
+        self.db.dexterity = random.randint(3, 18)
+        self.db.intelligence = random.randint(3, 18)
+        self.db.wisdom = random.randint(3, 18)
+        self.db.charisma = random.randint(3, 18)
+        self.db.constitution = random.randint(3, 18)
+        self.db.resilience = random.randint(3, 18)
+    
+    def get_stats(self):
+        """
+        Get the main stats of this character
+        """
+        #return self.strength, self.dexterity, self.intelligence
+        return self.db.strength, self.db.dexterity, self.db.intelligence, self.db.wisdom, self.db.constitution, self.db.charisma, self.db.resilience
+    
     pass

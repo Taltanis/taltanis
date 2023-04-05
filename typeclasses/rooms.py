@@ -20,5 +20,10 @@ class Room(ObjectParent, DefaultRoom):
     See examples/object.py for a list of
     properties and methods available on all Objects.
     """
+    def at_object_creation(self):       
+        self.db.is_dark = False
+    
+    def is_dark(self):
+        return self.db.is_dark
 
     pass
