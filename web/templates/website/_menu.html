@@ -74,9 +74,9 @@ folder and edit it to add/remove links to the menu.
 					<a class="dropdown-item" href="{% url 'New' %}">Alles für den Spielstart</a>
 					<a class="dropdown-item" href="{% url 'Prologue' %}">An die Spielerinnen und Spieler</a>
 					<!--a class="dropdown-item" href="#">Kompendium</a-->
-					<a class="dropdown-item" href="#">Discord</a>
 					<a class="dropdown-item" href="{% url 'FAQ' %}">FAQ</a>
 					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Discord</a>
 					<a class="dropdown-item" href="{% url 'Participate' %}">Mitmachen?</a>
 				</div>
 			</li>
@@ -117,7 +117,7 @@ folder and edit it to add/remove links to the menu.
 			</li>
  
     {% if webclient_enabled %}
-    <!--li><a class="nav-link" href="{% url 'webclient:index' %}" target="_blank">Jetzt spielen!</a></li-->
+    <li><a class="nav-link" href="{% url 'webclient:index' %}" target="_blank">Jetzt spielen!</a></li>
     {% endif %}
 
     {% endblock %}

@@ -1,8 +1,7 @@
 /*
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+Serifen-Schriftarten für den Haupttext, da er in gedruckter Form leichter zu lesen ist. Beispiel: Times
+Serifenlose Schrift für Überschriften. Beispiel: Helvetica 
+Bei Webseiten macht man das genau andersrum.
 */
 /*
     font-family: "CormorantInfant", regular;
@@ -11,7 +10,7 @@
 */
 /*
 .card-title {
-    font-family: "Cormorant Infant", regular;
+    font-family: "CormorantInfant", regular;
 }
 */
 /*
@@ -33,24 +32,56 @@ p {
 }
 
 */
+
+body { font-family: 'EB Garamond', serif; }
+
+
+/*
 body {
     /*font-family: "Cormorant Infant", regular;*/
     /*font-family: "OpenSans", regular;*/
     /*font-family: "RobotoSlab", regular;*/
-    font-family: "Roboto", regular;
-    font-family: "Cormorant Garamond", regular;
-    font-family: "Roboto Slab", regular;
+    /*font-family: "Roboto", regular;*/
+    /*font-family: "Cormorant Garamond", regular;*/
+    /*font-family: "Roboto Slab", regular;*/
 }
+*/
 /*
 .test1 {font-family: "Cormorant Infant", regular;}
 .test2 {font-family: "Open Sans", regular;}
 .test3 {font-family: "Roboto Slab", regular;}
 */
 
+p {
+	 font-family: 'EB Garamond', serif;
+    /*font-family: "Cormorant Infant", regular;*/
+	/*font-family: 'Nanum Pen Script', cursive;*/
+}
+
 h1 {
-    font-family: "Cormorant Infant", regular;
+    /*font-family: "Cormorant Infant", regular;*/
+	/*font-family: 'Cormorant Infant', serif;*/
 }
 
 h2 {
-    font-family: "CormorantInfant", regular;
+    /*font-family: "CormorantInfant", regular;*/
 }
+/*
+.card-body { background: hsla(350,50%,50%,0.3); }
+*/
+.card { background: rgba(234,230,202,0.7); }
+.card-body { background: rgba(234,230,202,0.7); }
+
+.container-fluid { background: rgba(234,230,202,0.7)!important; }
+.col-3 { background: rgba(234,230,202,0.7)!important;; }
+.list-group-item { background: rgba(234,230,202,0.7)!important;; }
+/*
+.navbar-expand-lg { background: rgba(234,230,202,0.7); }
+.navbar-light { background: rgba(234,230,202,0.7); }
+.bg-light{ background: rgba(234,230,202,0.7); }
+.navbar { background: rgba(234,230,202,0.7); }
+*/
+/* navbar navbar-expand-lg navbar-light bg-light            col-3*/
+.bg-light{ background: rgba(234,230,202,0.7)!important; }
+.navbar-light { background: rgba(234,230,202,0.7)!important; }
+.navbar-expand-lg { background: rgba(234,230,202,0.7)!important; }
