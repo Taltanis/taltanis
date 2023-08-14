@@ -25,3 +25,6 @@ def questspage(request):
 
 def seafaringpage(request):
     return render(request, "world/seafaring.html")
+
+def antologypage(request):
+    return render(request, "world/antology.html")

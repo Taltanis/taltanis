@@ -94,6 +94,81 @@ AUTO_PUPPET_ON_LOGIN = False # Default: True
 #WIKI_CAN_READ = "anonymous"
 #WIKI_CAN_WRITE = "builder"
 
+######################################################################
+# In-game Channels created from server start
+######################################################################
+
+# The mudinfo channel is a read-only channel used by Evennia to replay status
+# messages, connection info etc to staff. The superuser will automatically be
+# subscribed to this channel. If set to None, the channel is disabled and
+# status messages will only be logged (not recommended).
+CHANNEL_MUDINFO = {
+    "key": "MudInfo",
+    "aliases": "",
+    "desc": "Connection log",
+    "locks": "control:perm(Developer);listen:perm(Admin);send:false()",
+}
+# Optional channel (same form as CHANNEL_MUDINFO) that will receive connection
+# messages like ("<account> has (dis)connected"). While the MudInfo channel
+# will also receieve this info, this channel is meant for non-staffers. If
+# None, this information will only be logged.
+CHANNEL_CONNECTINFO = None
+# New accounts will auto-sub to the default channels given below (but they can
+# unsub at any time). Traditionally, at least 'public' should exist. Entries
+# will be (re)created on the next reload, but removing or updating a same-key
+# channel from this list will NOT automatically change/remove it in the game,
+# that needs to be done manually. Note: To create other, non-auto-subbed
+# channels, create them manually in server/conf/at_initial_setup.py.
+DEFAULT_CHANNELS = [
+    # {
+    #     "key": "Public",
+    #     "aliases": ("pub",),
+    #     "desc": "Public discussion",
+    #     "locks": "control:perm(Admin);listen:all();send:all()",
+    # },
+	{
+         "key": "Tod",
+         "aliases": ("tod",),
+         "desc": "Meldung wenn ein Spieler stirbt.",
+         "locks": "control:perm(Admin);listen:all();send:all()",
+     },
+	{
+         "key": "Laber",
+         "aliases": ("laber","Public","pub"),
+         "desc": "Allgemeiner Kanal für Spieler",
+         "locks": "control:perm(Admin);listen:all();send:all()",
+     },
+	{
+         "key": "Schwafel",
+         "aliases": ("schwafel",),
+         "desc": "Allgemeiner Kanal für alle Nicht-Taltanis-Themen",
+         "locks": "control:perm(Admin);listen:all();send:all()",
+     },
+	{
+         "key": "Neuling",
+         "aliases": ("neuling","neu"),
+         "desc": "Kanal für alle Anfänger-Fragen",
+         "locks": "control:perm(Admin);listen:all();send:all()",
+     },
+	{
+         "key": "Monster",
+         "aliases": ("monster",),
+         "desc": "Mitteilung der Monster",
+         "locks": "control:perm(Admin);listen:all();send:all()",
+     },
+	{
+         "key": "Nobiles",
+         "aliases": ("nobiles",),
+         "desc": "Adelige und Götter",
+         "locks": "control:perm(Admin);listen:all();send:all()",
+     },
+	{
+         "key": "Pantheon",
+         "aliases": ("pantheon",),
+         "desc": "Götter unter sich",
+         "locks": "control:perm(Admin);listen:perm(Admin);send:perm(Admin)",
+     },
+]
 
 #######################################################################
 # SECRET_KEY

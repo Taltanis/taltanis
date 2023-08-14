@@ -19,3 +19,6 @@ def codesofconductpage(request):
 
 def rightspage(request):
     return render(request, "codex/rights.html")
+
+def privacypage(request):
+    return render(request, "codex/privacy.html")

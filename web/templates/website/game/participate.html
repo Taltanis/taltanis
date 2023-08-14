@@ -1,12 +1,52 @@
 {% extends "base.html" %}
+
+{% block sidebar %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light"  style="position: fixed;">
+  <div class="container-fluid">
+    Spielende werben und MentorIn werden<br>
+    Taltanis finanziell unterstützen<br>
+    Inhalte gestalten mit der Demiurgen-Zunft<br>
+    Adeln und Taltanis weiter entwickeln<br>
+    Taltanis betreiben als AdministratorIn
+  </div>
+</nav>		  
+{% endblock %}
+
 {% block content %}
 <div class="row">
   <div class="col">
-    <h1>Mitmachen</h1>
-    <p class="lead">
-        Mitmachen kannst du hier auch. Das ist sogar eigentlich der Sinn des Ganzen. Wie das geht und 
-        ob du eventuell etwas vorher noch erledigen musst steht hier.
-    </p>
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">Mitmachen</h1>
+
+        <hr/>
+
+        <p class="lead">
+          Mitmachen kannst du hier auch. Das ist sogar eigentlich der Sinn des Ganzen. Auf welche  
+          Weise du dich an Taltanis beteiligen kannst, das erfährst du hier.
+        </p>
+        <h2>Spielende werben und MentorIn werden</h2>
+        <p></p>
+        <h2>Taltanis finanziell unterstützen</h2>
+        <p>
+          Der Betrieb von Taltanis erfordert einen Server und eine Domain, und beides kostet Geld. 
+          Diese Kosten werden von den Administratoren übernommen, und die freuen sich, wenn auch 
+          du dich daran beteiligen möchtest. Du kannst das zum Beispiel per Patreon machen. 
+        </p>
+        <h2>Inhalte gestalten mit der Demiurgen-Zunft</h2>
+        <p>
+          Ein ganz wichtiger Teil von Taltanis ist die Möglichkeit für Spielende, sich an der Entwicklung 
+          der Welt zu beteiligen. Und dafür wiederrum ist ein ganz wichtiger Teil die Demiurgen-Zunft. Wenn 
+          du dort eintrittst, bekommst du die Möglichkeit, in deinem eigenen Arbeitszimmer an Taltanis zu 
+          entwickeln. Ganz ohne Regeln geht das natürlich nicht, aber wie genau die aussehen erfährst du
+          in der Zunft.
+        </p>
+        <h2>Adeln und Taltanis weiter entwickeln</h2>
+        <p></p>
+        <h2>Taltanis betreiben als AdministratorIn</h2>
+        <p></p>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

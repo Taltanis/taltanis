@@ -10,7 +10,7 @@ creation commands.
 from evennia.objects.objects import DefaultCharacter
 
 from .objects import ObjectParent
-
+import random
 
 class Character(ObjectParent, DefaultCharacter):
     """
@@ -40,6 +40,21 @@ class Character(ObjectParent, DefaultCharacter):
         self.db.charisma = random.randint(3, 18)
         self.db.constitution = random.randint(3, 18)
         self.db.resilience = random.randint(3, 18)
+
+        #self.db.size = 2
+        #self.db.power = 0
+        #
+        #self.db.resilience = 0
+        #self.db.karma = 0
+        #self.db.hitpoints = 0
+        #self.db.spellpoints = 0
+        #self.db.endurance = 0   # Ausdauer
+        #self.db.mana = 0
+        #self.db.essence = 0
+        #
+        #self.db.inspiration = 0
+        #
+        #self.db.reputation = 0
     
     def get_stats(self):
         """

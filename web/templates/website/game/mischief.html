@@ -1,56 +1,111 @@
 {% extends "base.html" %}
+
+{% block sidebar %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed;">
+  <div class="container-fluid">
+    1. Punkt<br>
+    2. Punkt<br>
+    3. Punkt
+  </div>
+</nav>
+{% endblock %}
+
 {% block content %}
 <div class="row">
   <div class="col">
-    <h1>Frust, Stress, Streit und anderes Unheil im MUD</h1>
-    <p class="lead">
-        Es ist nicht immer alles Friede und Freude in einem MUD. Manchmal nervt 
-        das Spiel, manchmal die Spielenden. Und manchmal ist es auch schlimmer. 
-        Ein paar Worte dazu scheinen da angemessen.
-    </p>
-    <h2>Der Tod und andere Frustrationen im Spiel</h2>
-    <p>
-        Die meisten bunt bebilderten MMORPGs halten Frust möglichst von den Spielern fern. 
-        Das mag damit zusammen hängen, dass man keine zahlenden Kunden vergraulen will. Die 
-        es bei uns ja gar nicht erst gibt... *evillaugh*
-    </p>
-    <p>
-        Nun, um es kurz zu machen: eine gewisse Frustration in unserem Spiel ist beabsichtigt. 
-        Das der Tod einer Spielfigur eine spürbare Beeinträchtigung mitbringt ist so gewollt. 
-        Das nicht jede Gilde alles gleich gut kann ebenso. Das Spielende für ihre Charaktere 
-        entscheidungen treffen müssen, die unter Umständen nicht nur großartige Konsequenzen 
-        nach sich ziehen, ist... Du ahnst es sicher schon. Wenn dich so etwas aufregt, dann wirst 
-        du hier unter Umständen nicht glücklich werden.
-    </p>
-    <p>
-        Nicht beabsichtigt ist: stundenlanges grinden und andere nervige Spielemechaniken. 
-        Wenn du sowas entdeckst, dann frag ruhig mal höflich nach, ob das wirklich so gedacht
-        ist. Wir sind auch nur Menschen.
-    </p>
-    <h2>Die Anderen und der öffentliche Raum</h2>
-    <p>
-        Absatz
-    </p>
-    <h2>Auf du und du mit Unbekannten</h2>
-    <p>
-        Absatz
-    </p>
-    <h2>Toxisches Verhalten im MUD</h2>
-    <p>
-      Man muss es ganz klar sagen: manche Spielende überschreiten jede Grenze, sowohl die des
-      Anstandes als auch rechtliche. Und manche machen das ganz bewusst, in der Anonymität des
-      Netzes. Und leider muss man auch sagen, dass uns Spielmachern da Grenzen gesetzt sind 
-      in dem, was wir dagegen tun können. Schon weil wir immer erst hinterher aktiv werden können.
-    </p>
-    <p>
-      Das bedeutet vor allem, dass du dich selbst schützen musst. Sei vorsichtig mit dem, 
-      was du hier über dich erzählst. Und vor allem: reagiere, wenn dir hier auf unangenehme Art 
-      begegnet wird. Das hier ist nicht der Ort, wo man sich bedrängen lassen muss. 
-    </p>
-    <p>
-      Sollten rechtliche Schritte notwendig sein unterstützen wir euch natürlich. Im Rahmen dessen, 
-      was gesetzlich möglich ist.
-    </p>
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">Frust, Stress, Streit und anderes Unheil im MUD</h1>
+        <hr />
+        <p class="lead">
+          Es ist nicht immer alles Friede und Freude in einem MUD. Manchmal nervt
+          das Spiel, manchmal die Spielenden. Und manchmal ist es auch schlimmer.
+          Ein paar Worte dazu scheinen da angemessen.
+        </p>
+        <h2>Moderation</h2>
+        <p>
+          Moderation ist ein wesentliches Konzept von Taltanis.
+        </p>
+        <h2>Der Tod, Ausrüstungsverlust und andere Frustrationen im Spiel</h2>
+        <p>
+          Die meisten bunt bebilderten MMORPGs halten Frust möglichst von den Spielern fern.
+          Das mag damit zusammen hängen, dass man keine zahlenden Kunden vergraulen will. Die
+          es bei uns ja gar nicht gibt... *MUAHAHAhust*
+        </p>
+        <p>
+          Nun, um es kurz zu machen: eine gewisse Frustration ist bei uns durchaus beabsichtigt.
+          Dass der Tod einer Spielfigur eine spürbare Beeinträchtigung mitbringt ist so gewollt.
+          Dass Ausrüstung verloren gehen kann ist absolut so gedacht.
+          Dass nicht jede Gilde alles gleich gut kann ebenso. Dass Spielende für ihre Charaktere
+          Entscheidungen treffen müssen, die unter Umständen nicht nur großartige Folgen haben
+          ist... Du ahnst es sicher schon: So beabsichtigt.
+        </p>
+        <p>
+          Und dann ist es ja auch so, dass dieses Spiel weiter entwickelt wird. Es wird also mit
+          Sicherheit auch mal etwas ein- oder ausgebaut oder geändert, was vielleicht unbequeme
+          Auswirkungen mit sich bringt. Auch das gehört hier dazu.
+        </p>
+        <p>
+          Nicht beabsichtigt ist: stundenlanges grinden und andere nervige Spielmechaniken.
+          Wenn du so etwas entdeckst, dann frag ruhig mal höflich nach, ob das wirklich so gedacht
+          ist. Wir sind auch nur Menschen.
+        </p>
+        <h2>Entschädigung. Gibt es nicht.</h2>
+        <p>
+          Taltanis wird fortwährend weiterentwickelt. Und wird deshalb auch fortwährend neue Bugs
+          haben. Und alte natürlich auch. Wenn ein Spielercharakter dadurch (oder auch auf anderem
+          Weg) irgendeinen Verlust erleidet, <i>wird er nicht entschädigt</i>. Wenn also Gegenstände
+          oder andere Errungenschaften verloren gehen, dann bleiben sie verloren.
+        </p>
+        <p>
+          Diese Regelung mag streng und unfair erscheinen, und vielleicht ist sie es sogar auch. Sie
+          ist aber auch eine Notwendigkeit. Ein solcher Verlust müsste ja wenigstens
+          geprüft werden, bevor eine Entschädigung erfolgen könnte. Und das ist vermutlich oft
+          nichtmal möglich, mindestens ist es aber sehr zeitaufwändig. Würde aber auf eine solche
+          Überprüfung verzichtet werden, wäre hier eine Bugausnutzung viel zu einfach.
+        </p>
+        <p>
+          Es gilt also die unumstößliche Regelung, dass <i>nicht</i> entschädigt wird, und zwar
+          absolut ohne Ausnahme. Sollte gegen diese Regelung verstoßen werden, wird das Konsequenzen
+          haben sowohl für denjenigen, der die Entschädigung gab. Als auch für denjenigen,
+          der die Entschädigung angenommen hat.
+        </p>
+        <h2>Die Anderen und der öffentliche Raum</h2>
+        <p>
+          Dass die Anderen oft nicht so sind, wie man sich das wünscht, ist ja keine Eigenschaft nur
+          von MUDs. Das kann schonmal nerven, und manchmal ist man dann
+          in irgendwas verstrickt, ohne dass man so richtig weiß, wie es dazu kam. Und manchmal weiß
+          man es auch. Ein häufig gegebener Rat ist dann, sich bewusst zu machen, dass man es mit
+          <i>Menschen</i> zu tun hat auf der anderen Seite. Viel zu nützen scheint das aber oft nicht.
+          Vielleicht hilft es dir in solchen Fällen, dir bewusst zu machen, dass viele
+          Spieler nicht ohne Grund in einem Online-Spiel sind. Natürlich, manche spielen auch nur.
+          Aber für viele ist das hier auch eine Zuflucht und ein Schutzraum vor den Problemen des RL.
+        </p>
+        <p>
+          Naja, und wenn dir das nicht hilft, die
+        </p>
+        <h2>Toxisches Verhalten im MUD</h2>
+        <p>
+          Man muss es ganz klar sagen: manche Spielende überschreiten jede Grenze, sowohl die des
+          Anstandes als auch rechtliche. Und manche machen das ganz bewusst, in der Anonymität des
+          Netzes. Und leider muss man auch sagen, dass uns Spielmachern da Grenzen gesetzt sind
+          in dem, was wir dagegen tun können. Schon weil wir immer erst hinterher aktiv werden können.
+        </p>
+        <p>
+          Das bedeutet vor allem, dass du dich selbst schützen musst. Sei vorsichtig mit dem,
+          was du hier über dich erzählst. Und vor allem: reagiere, wenn dir jemand auf unangenehme Art
+          begegnet. Das ist hier nicht der Ort, wo du dich bedrängen lassen muss. Und wer dir gegenüber
+          Grenzen überschreitet, wird das sicher auch bei anderen machen.
+        </p>
+        <p>
+          (Möglichkeiten zu reagieren)
+        </p>
+        <p>
+          Sollten rechtliche Schritte notwendig sein, unterstützen wir dich natürlich. Im Rahmen dessen,
+          was uns gesetzlich und technisch möglich ist.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
